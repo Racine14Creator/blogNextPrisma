@@ -1,4 +1,4 @@
-import { BookOpenCheck } from "lucide-react"
+import { BookOpenCheck, UserPlus } from "lucide-react"
 import Link from "next/link"
 
 const Navbar = () => {
@@ -9,7 +9,8 @@ const Navbar = () => {
                     <Link href={'/'}><BookOpenCheck /></Link>
                 </div>
                 <div className="flex-none">
-                    <Link href='/create' className="btn btn-ghost">
+                    <Link href='/create' className="btn btn-primary">
+                        <UserPlus />
                         Create Post
                     </Link>
                 </div>

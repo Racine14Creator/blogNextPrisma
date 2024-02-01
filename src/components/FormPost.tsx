@@ -5,10 +5,11 @@ import { FC } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 
 interface FormPostProps {
-    submit: SubmitHandler<FormInputPost>
+    submit: SubmitHandler<FormInputPost>;
+    isEditing: boolean;
 }
 
-const FormPost: FC<FormPostProps> = ({ submit }) => {
+const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
     const { register, handleSubmit } = useForm<FormInputPost>()
 
     return (
@@ -30,7 +31,9 @@ const FormPost: FC<FormPostProps> = ({ submit }) => {
                 <option>Javascript</option>
                 <option>TypeScript</option>
             </select>
-            <button className="btn btn-primary w-full max-w-lg">Create</button>
+            <button className="btn btn-primary w-full max-w-lg">
+                {isEditing ? 'Update' : 'Create'}
+            </button>
         </form>
     )
 }
