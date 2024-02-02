@@ -13,7 +13,10 @@ const EditPostPage = () => {
         <div>
             <BackButton />
             <h1 className="text-2xl my-4 font-bold text-center">Edit post</h1>
-            <FormPost submit={handleEditPost} isEditing={true} />
+            <FormPost
+                submit={handleEditPost}
+                isEditing={true}
+            />
         </div>
     )
 }
