@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className="navbar bg-neutral-100">
             <div className="container">
                 <div className="flex-1">
-                    <Link href={'/'}><BookOpenCheck /></Link>
+                    <Link href={'/'}><BookOpenCheck color="black" /></Link>
                 </div>
                 <div className="flex-none">
                     <Link href='/create' className="btn btn-primary">

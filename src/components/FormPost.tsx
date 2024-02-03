@@ -1,8 +1,9 @@
 "use client"
 
-import { FormInputPost } from "@/app/types"
-import { FC } from "react"
-import { SubmitHandler, useForm } from "react-hook-form"
+import { FormInputPost } from "@/app/types";
+import { Pencil, UserPlus } from "lucide-react";
+import { FC } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 interface FormPostProps {
     submit: SubmitHandler<FormInputPost>;
@@ -17,13 +18,13 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
             <input
                 {...register("title", { required: true })}
                 type="text"
-                placeholder="Enter the title..." className="input w-full max-w-lg border" />
+                placeholder="Enter the title..." className="input w-full max-w-lg border border-spacing-1 border-white" />
             <textarea
                 {...register("content", { required: true })}
-                className="textarea w-full max-w-lg" placeholder="Enter content..."></textarea>
+                className="textarea w-full max-w-lg border border-spacing-1 border-white" placeholder="Enter content..."></textarea>
             <select
                 {...register("tag", { required: true })}
-                className="select select-bordered w-full max-w-lg"
+                className="select select-bordered w-full max-w-lg border border-spacing-1 border-white"
                 defaultValue={''}>
                 <option disabled value={''}>Select Tag</option>
                 <option>Python</option>
@@ -31,8 +32,11 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
                 <option>Javascript</option>
                 <option>TypeScript</option>
             </select>
-            <button className="btn btn-primary w-full max-w-lg">
-                {isEditing ? 'Update' : 'Create'}
+            <button className={`btn ${isEditing ? 'btn-error' : 'btn-primary'} w-full max-w-lg`}>
+                {isEditing ? (
+                    <Pencil />
+                ) : (<UserPlus />)}
+                {isEditing ? `Update` : `Create`}
             </button>
         </form>
     )
