@@ -34,9 +34,8 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
             </select>
             <button className={`btn ${isEditing ? 'btn-error' : 'btn-primary'} w-full max-w-lg`}>
                 {isEditing ? (
-                    <Pencil />
-                ) : (<UserPlus />)}
-                {isEditing ? `Update` : `Create`}
+                    <><Pencil /> Update</>
+                ) : (<><UserPlus /> Create</>)}
             </button>
         </form>
     )
