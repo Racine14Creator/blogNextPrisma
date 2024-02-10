@@ -1,14 +1,25 @@
+import { Tag } from '@prisma/client';
 import Link from 'next/link'
-import React from 'react'
+import { FC } from 'react';
+interface PostCardProps {
+    post: {
+        id: string;
+        title: string;
+        content: string;
+        tag: Tag
+    }
+}
+const PostCard: FC<PostCardProps> = ({ post }) => {
+    const { title, content, tag, id } = post
 
-const PostCard = () => {
     return (
         <div className="card w-full bg-primary text-primary-content">
             <div className="card-body">
-                <h2 className="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <Link href="/blog/1" className="btn">Ready more...</Link>
+                <h2 className="card-title">{title}</h2>
+                <p>{content.substring(0, 30)}</p>
+                <div className="card-actions flex items-center justify-between">
+                    <span className="badge badge-neutral">{tag.name}</span>
+                    <Link href={`/blog/${id}`} className="btn">Ready more...</Link>
                 </div>
             </div>
         </div>
