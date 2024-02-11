@@ -6,11 +6,13 @@ export async function POST(req: Request) {
     try {
         const body = req.json();
 
-        const post = await await db.post.create({
+        console.log({ "data": body });
+
+        const post = await db.post.create({
             data: {
                 title: body.title,
                 content: body.content,
-                tagId: body.tagId
+                tagId: body.tagId,
             }
         })
         return NextResponse.json(post, { status: 200 })

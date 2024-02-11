@@ -5,7 +5,7 @@ import { FormInputPost } from "../types"
 import BackButton from "@/components/BackButton"
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const CreatePage = () => {
     const router = useRouter()
@@ -20,7 +20,10 @@ const CreatePage = () => {
         onError: (error) => {
             console.log(error);
         },
-        onSuccess: () => { router.push('/') }
+        onSuccess: () => {
+            router.push('/');
+            router.refresh
+        }
     })
     return (
         <div>

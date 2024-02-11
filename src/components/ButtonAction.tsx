@@ -1,16 +1,20 @@
 import { Pencil, Trash } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+
+
 
 const ButtonAction = () => {
+
     return (
         <div>
-            <Link href={'/edit/1'} className='mr-2 btn'>
+            <Link href={`/edit/12456`} className='mr-2 btn'>
                 <Pencil />
-                Edit</Link>
+                Edit
+            </Link>
             <button className="btn btn-error">
                 <Trash />
-                Delete</button>
+                Delete
+            </button>
         </div>
     )
 }

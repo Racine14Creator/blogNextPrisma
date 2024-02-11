@@ -36,7 +36,7 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
                 <span className="loading loading-ring loading-md"></span>
             ) : (
                 <select
-                    {...register("tag", { required: true })}
+                    {...register("tagId", { required: true })}
                     className="select select-bordered w-full max-w-lg border border-spacing-1 border-white"
                     defaultValue={''}>
                     <option disabled value={''}>Select Tag</option>
