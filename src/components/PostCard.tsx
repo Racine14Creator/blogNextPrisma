@@ -16,7 +16,7 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
         <div className="card w-full bg-primary text-primary-content">
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
-                <p>{content.substring(0, 30)}</p>
+                <p>{content.slice(0, 30)}</p>
                 <div className="card-actions flex items-center justify-between">
                     <span className="badge badge-neutral">{tag.name}</span>
                     <Link href={`/blog/${id}`} className="btn btn-link text-black">Ready more...</Link>
